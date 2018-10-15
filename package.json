@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.10.1",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "prop-types": "^15.6.2",
@@ -15,11 +16,7 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^17.0.0",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.10.0",
+    "flow-bin": "^0.83.0",
     "gh-pages": "^2.0.0",
     "redux-devtools-extension": "^2.13.5",
     "redux-logger": "^3.0.6"
