@@ -5,13 +5,17 @@ import { List, Pagination } from 'antd';
 import IssueItem from '../components/IssueItem';
 import { getIssues } from '../actions';
 
-class IssuesPage extends React.Component {
+export class IssuesPage extends React.Component {
   componentDidMount() {
     this.props.getIssues();
   }
 
   handlePaginationClick = (page) => {
     this.props.getIssues(page)
+  }
+
+  renderListItem = (item) => {
+    return (<List.Item><IssueItem data={item} /></List.Item>);
   }
 
   render () {
@@ -21,7 +25,7 @@ class IssuesPage extends React.Component {
         <List
           bordered
           dataSource={issues}
-          renderItem={item => (<List.Item><IssueItem data={item} /></List.Item>)}
+          renderItem={this.renderListItem}
         />
         <div className="pagination-wrapper">
           <Pagination
@@ -40,7 +44,7 @@ IssuesPage.propTypes = {
   issues: PropTypes.array.isRequired
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   issues: state.issuesData.issues,
   lastPage: state.issuesData.lastPage,
 });

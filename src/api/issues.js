@@ -1,6 +1,3 @@
-/**
- * Mocking client-server processing
- */
 import axios from './config';
 
 export default {

@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect, NavLink } from 'react
 
 const TabPane = Tabs.TabPane;
 
-const App = ({ fetching }) => (
+export const App = ({ fetching }) => (
   <Router>
     <main>
       {fetching && <Loader />}
@@ -39,7 +39,7 @@ App.propTypes = {
   fetching: PropTypes.bool,
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   fetching: state.issuesData.fetching,
 })
 

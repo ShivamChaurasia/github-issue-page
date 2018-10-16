@@ -10,11 +10,15 @@ import {
   getIssueComments,
 } from '../actions';
 
-class IssueDetailPage extends React.Component {
+export class IssueDetailPage extends React.Component {
   
   componentDidMount() {
     this.props.getIssueDetails(this.props.match.params.issueId);
     this.props.getIssueComments(this.props.match.params.issueId);
+  }
+
+  populateComments(comments) {
+    return comments.map( obj => <Comment key={obj.id} data={obj}/>)
   }
 
   render () {
@@ -36,7 +40,7 @@ class IssueDetailPage extends React.Component {
           </span>
         </div>
         <Comment data={selectedIssue} />
-        {comments.map( obj => <Comment key={obj.id} data={obj}/>)}
+        {this.populateComments(comments)}
       </div>
     )
   }
@@ -47,7 +51,7 @@ IssueDetailPage.propTypes = {
   comments: PropTypes.array.isRequired,
 };
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   selectedIssue: state.issuesData.selectedIssue,
   comments: state.issuesData.comments,
 });

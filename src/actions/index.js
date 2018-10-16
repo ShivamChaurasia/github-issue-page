@@ -2,12 +2,12 @@ import issuesAPIs from '../api/issues';
 import { getLastPageNumber } from '../util';
 import * as types from '../constants/ActionTypes';
 
-const receiveIssues = issues => ({
+export const receiveIssues = issues => ({
   type: types.RECEIVE_ISSUES,
   issues,
 });
 
-const updateMetaData = payload => ({
+export const updateMetaData = payload => ({
   type: types.UPDATE_METADATA,
   payload,
 });
@@ -19,7 +19,7 @@ export const getIssues = (page = 1) => (dispatch) => {
   });
 };
 
-const setSelectedIssueData = payload => ({
+export const setSelectedIssueData = payload => ({
   type: types.SET_SELECTED_ISSUE_DATA,
   payload,
 });
@@ -30,7 +30,7 @@ export const getIssueDetails = issueNumber => (dispatch) => {
   });
 };
 
-const setSelectedIssueComments = payload => ({
+export const setSelectedIssueComments = payload => ({
   type: types.SET_SELECTED_ISSUE_COMMENTS,
   payload,
 });
