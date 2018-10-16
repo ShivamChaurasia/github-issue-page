@@ -64,5 +64,11 @@ span.comments-count {
 }
 
 @media (max-width: 768px) {
-  
+  .issue-detail-page {
+    margin: 20px;
+  }
+
+  .ant-card-body p {
+    overflow-x: auto;
+  }
 }
